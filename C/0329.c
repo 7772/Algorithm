@@ -1,26 +1,18 @@
 #include <stdio.h>
 
+int sqrtFuncByReference(int *num) {
+    return (*num)*(*num);
+}
+
+int sqrtFuncByValue(int num) {
+    return num*num;
+}
+
 int main() {
-    int arr[6] = {1, 2, 3, 4, 5, 6};
+    int num = 3;
 
-    int *head, *tail;
-    int i;
-    int tmp = 0;
-
-    head = arr;
-    tail = &arr[5];
-
-    for(i=0; i<3; i++) {
-        tmp = *head;
-        *head = *tail;
-        *tail = tmp;
-        head++;
-        tail--;
-    }
-
-    for(i=0; i<6; i++) {
-        printf("%d\n", arr[i]);
-    }
+    printf("sqrtFuncByReference %d \n", sqrtFuncByReference(&num));
+    printf("sqrtFuncByValue %d \n", sqrtFuncByValue(num));
 
     return 0;
 }
