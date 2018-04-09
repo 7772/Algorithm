@@ -1,3 +1,11 @@
+/** 
+ * SAMSUNG SW PROBLEM 3975
+ * https://www.swexpertacademy.com/main/code/problem/problemDetail.do
+ * 
+ * @author HyunDo Park
+ * @modified 9/4/2018
+ **/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -28,14 +36,7 @@ int main() {
     bob = (struct gameResult *)malloc(sizeof(struct gameResult) * T);
 
     for (test_case = 0; test_case < T; test_case++) {
-		/////////////////////////////////////////////////////////////////////////////////////////////
-		/*
-		이 부분에 여러분의 알고리즘 구현이 들어갑니다.
-		*/
-		/////////////////////////////////////////////////////////////////////////////////////////////
         scanf("%d %d %d %d", &alice[test_case].win, &alice[test_case].total, &bob[test_case].win, &bob[test_case].total);
-
-        // printf("%d %d %d %d \n", alice[test_case].win, alice[test_case].total, bob[test_case].win, bob[test_case].total);
 
         if(bob[test_case].win > bob[test_case].total || bob[test_case].win < 1 || bob[test_case].total < 1) {
             bob[test_case].isValidInput = FALSE;
@@ -56,8 +57,6 @@ int main() {
 
     // printf("\n");
     // printf("*-----------RESULT----------*\n");
-
-    // 출력 테스트
     
     for(test_case=0; test_case<T; test_case++) {
         // printf("%f %f \n", alice[test_case].winProp, bob[test_case].winProp);
